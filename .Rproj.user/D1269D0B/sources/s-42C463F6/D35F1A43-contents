@@ -1,0 +1,30 @@
+## use the Rcpp package to create
+## following the guideline in 
+## https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-package.pdf
+
+library(Rcpp)
+setwd("/Users/timtsang/SPH Dropbox/Tim Tsang/_influenza/kiddivax/crossprotection/_package")
+setwd("C:/Users/user/SPH Dropbox/Tim Tsang/_influenza/kiddivax/crossprotection/_package")
+
+Rcpp.package.skeleton("serodynamics")
+
+## function to add rcpp function to package
+## by adding the cpp file to src
+compileAttributes(pkgdir = "/Users/timtsang/SPH Dropbox/Tim Tsang/_influenza/kiddivax/crossprotection/_package/serodynamics", verbose = getOption("verbose"))
+
+compileAttributes(pkgdir = "C:/Users/user/SPH Dropbox/Tim Tsang/_influenza/kiddivax/crossprotection/_package/seroconstructWin", verbose = getOption("verbose"))
+
+
+## the command to test if this can be read by github and use
+library(devtools)
+library(roxygen2)
+
+install_github("timktsang/testing")
+library(seroconstruct)
+
+rcpp_hello_world()
+
+gen_gamma(1,2)
+
+
+

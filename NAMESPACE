@@ -1,0 +1,6 @@
+useDynLib(serodynamics, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")
+import(Rcpp)
+import(RcppParallel)
+import(RcppArmadillo)

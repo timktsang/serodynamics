@@ -1,0 +1,16 @@
+Package: serodynamics
+Type: Package
+Title: Reconstructing antibody dynamics to estimate the risk of influenza virus infection
+Version: 1.0
+Date: 2023-11-15
+Author: Tim Tsang
+Maintainer: Tim Tsang <timkltsang@gmail.com>
+Description: A Bayesian model to jointly estimate infection probability in seasons, boosting and waning in antibody after infection, and baseline distribution of HAI titer.
+License: GPL (>= 2)
+Imports: Rcpp (>= 1.0.9), RcppParallel (>= 5.0.0), RcppArmadillo
+LinkingTo: 
+    Rcpp,
+    RcppArmadillo,
+    RcppParallel
+SystemRequirements: C++11, TBB
+RoxygenNote: 7.2.3
