@@ -1,16 +1,16 @@
-#' Run the mcmc for the bayesian model
+#' Run the MCMC for the Bayesian model
 #'
-#' The main function to run the MCMC for the bayesian model, to obtain indiviudal dynamics, model parameters such as infection probability, boosting, waning, and measurement error
-#' @param inputdata The data for running MCMC, in dataframe format. It should be the same format for the data in the package. It include 1) age_group (0: children, 1: adults, 2: older aduts), 2) start_time: start of follow-up, 3) end_time: end of follow-up, 4: time1: date for first serum collection, 5: time2: date for second serum collection, 6: time3: date for third serum collection, 7: HAI_titer_1: HAI titer for first serum collection, 8: HAI_titer_2: HAI titer for second serum collection, 9: HAI_titer_3: date for third serum collection
-#' @param inputILI The data for influenza activity used in the inference, the row number should match with the date in the inputdata
-#' @param n_iteration The number of iteration of the MCMC
-#' @param burnin The iteration for burn-in for MCMC
-#' @param thinning The number of thining in MCMC
-#' @return A list object stores: 1: posterior samples for the model parameter, 2: posterior samples for the parameter for baseline HAI titer, 3: posterior samples for the infection staus for each individual, 4: posterior samples for the infection time for each individual (0 for uninfected individuals), 5: posterior samples for the individual waning, 6: posterior samples for individual boosting, 7: posterior samples for the baseline HAI titer, 8: input data, 9: input influenza activity data
+#' The main function to run the MCMC for the Bayesian model, to obtain individual dynamics, model parameters such as infection probability, boosting, waning, and measurement error.
+#' @param inputdata The data for running MCMC, in dataframe format. It should be in the same format as the data in the package. It includes: 1) age_group (0: children, 1: adults, 2: older adults), 2) start_time: start of follow-up, 3) end_time: end of follow-up, 4) time1: date for first serum collection, 5) time2: date for second serum collection, 6) time3: date for third serum collection, 7) HAI_titer_1: HAI titer for first serum collection, 8) HAI_titer_2: HAI titer for second serum collection, 9) HAI_titer_3: HAI titer for third serum collection.
+#' @param inputILI The data for influenza activity used in the inference. The row number should match with the date in the inputdata.
+#' @param n_iteration The number of iterations of the MCMC.
+#' @param burnin The iteration for burn-in for MCMC.
+#' @param thinning The number of thinning in MCMC.
+#' @return A list object stores: 1) posterior samples for the model parameter, 2) posterior samples for the parameter for baseline HAI titer, 3) posterior samples for the infection status for each individual, 4) posterior samples for the infection time for each individual (0 for uninfected individuals), 5) posterior samples for the individual waning, 6) posterior samples for individual boosting, 7) posterior samples for the baseline HAI titer, 8) input data, 9) input influenza activity data.
 #' @examples 
-#' a1 <- serodynamics(inputdata,inputILI,n_iteration = 2000,burnin = 1000,thinning = 1)
+#' a1 <- serodynamics(inputdata, inputILI, n_iteration = 2000, burnin = 1000, thinning = 1)
 #' @export
-serordynamics <- function(inputdata,inputILI,n_iteration = 2000,burnin = 1000,thinning = 1){
+sero_dynamics <- function(inputdata,inputILI,n_iteration = 2000,burnin = 1000,thinning = 1){
 aaaaa1 <- Sys.time()
 
 keep_iteration <- burnin + 1:((n_iteration - burnin)/thinning)*thinning

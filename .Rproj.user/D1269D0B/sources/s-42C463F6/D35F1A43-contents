@@ -19,8 +19,8 @@ compileAttributes(pkgdir = "C:/Users/user/SPH Dropbox/Tim Tsang/_influenza/kiddi
 library(devtools)
 library(roxygen2)
 
-install_github("timktsang/testing")
-library(seroconstruct)
+install_github("timktsang/serodynamics")
+library(serodynamics)
 
 rcpp_hello_world()
 
