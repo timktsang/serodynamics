@@ -1,4 +1,4 @@
-#' Example input data
+#' Example of input data
 #'
 #' This is an example of the input data used in the \code{serodynamics} function. This data frame illustrates the format of the input data.
 #' @docType data
@@ -18,7 +18,7 @@
 #' @family inputdata
 "inputdata"
 
-#' Example flu activity data
+#' Example of flu activity data
 #'
 #' This is an example of the flu activity data used in the \code{serodynamics} function. This data frame specifies the format of the flu activity data.
 #' @docType data

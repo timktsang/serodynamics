@@ -27,4 +27,7 @@ rcpp_hello_world()
 gen_gamma(1,2)
 
 
+library(roxygen2); # Read in the roxygen2 R package
+roxygenise();      # Builds the help files
+
 
