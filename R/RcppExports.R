@@ -25,7 +25,3 @@ mcmc <- function(input1, input2, input3, ILI, mcmc_n, int_para, int_para2, int_p
     .Call(`_serodynamics_mcmc`, input1, input2, input3, ILI, mcmc_n, int_para, int_para2, int_para3, paraseason, move, sigma, sigma3, burnin, thinning)
 }
 
-rcpp_hello_world <- function() {
-    .Call(`_serodynamics_rcpp_hello_world`)
-}
-
