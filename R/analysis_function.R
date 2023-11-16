@@ -191,7 +191,7 @@ output_model_estimate <- function(fitted_MCMC,period){
                   "Two-fold error (%)",
                   "Fold-change after infection for children (Boosting)",
                   "Fold-change after 1 year for children (Waning)",
-                  "Fold-change after 1 year for adults (Boosting)",
+                  "Fold-change after infection for adults (Boosting)",
                   "Fold-change after 1 year for adults (Waning)",
                   "Infection probability for children",
                   "Infection probability for adults",
