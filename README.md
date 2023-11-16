@@ -2,11 +2,9 @@
 
 # serodynamics
 
-[![Project Status: Active – While the package currently provides a set
-of fundamental functions, we are actively working on expanding its
-capabilities with more advanced tools for a comprehensive understanding
-of your
-results.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 `serodynamics` is a Bayesian modeling framework to infer influenza virus
 infection status, antibody dynamics, and individual infection risks from
@@ -14,6 +12,10 @@ serological data, by accounting for measurement error. This could
 identifiy influenza infections by relaxing 4-fold rise rule, and
 quantifies the contributions of age and pre-epidemic
 hemagglutination-inhibiting (HAI) titers to infection risk.
+
+While the package currently provides a set of fundamental functions, we
+are actively working on expanding its capabilities with more advanced
+tools for a comprehensive understanding of your results.
 
 ## Installation
 
