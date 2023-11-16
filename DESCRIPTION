@@ -7,7 +7,7 @@ Author: Tim Tsang
 Maintainer: Tim Tsang <timkltsang@gmail.com>
 Description: A Bayesian model to jointly estimate infection probability in seasons, boosting and waning in antibody after infection, and baseline distribution of HAI titer.
 License: GPL (>= 2)
-Imports: Rcpp (>= 1.0.9), RcppParallel (>= 5.0.0), RcppArmadillo
+Imports: Rcpp (>= 1.0.9)
 LinkingTo: 
     Rcpp,
     RcppArmadillo,
