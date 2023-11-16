@@ -2,6 +2,7 @@
 
 export(output_model_estimate)
 export(sero_dynamics)
+export(simulate_data)
 useDynLib(serodynamics, .registration=TRUE)
 importFrom(Rcpp, evalCpp)
 exportPattern("^[[:alpha:]]+")

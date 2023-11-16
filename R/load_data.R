@@ -29,3 +29,37 @@
 #'}
 #' @family example_data
 "flu_activity"
+
+#' Example of parameter vector for the main model
+#'
+#' This is an example of the parameter vector for the main model used in the \code{serodynamics} function. This data frame specifies the format of the parameter vector for the main model.
+#' @docType data
+#' @usage data(para1)
+#' @format A vector with 10 elements, where each of them is a model parameter:
+#' \describe{
+#'   \item{element 1}{the parameter value of the random measurement error}
+#'   \item{element 2}{the parameter value of the 2-fold error}
+#'   \item{element 3}{the boosting in HAI titer after infection for children (in log2 unit)}
+#'   \item{element 4}{the waning in HAI titer for children (in log2 unit)}
+#'   \item{element 5}{the boosting in HAI titer after infection for adults (in log2 unit)}
+#'   \item{element 6}{the waning in HAI titer for adults (in log2 unit)}
+#'   \item{element 7}{the scale parameter for children}
+#'   \item{element 8}{the scale parameter for adults}
+#'   \item{element 9}{the scale parameter for older adults}
+#'   \item{element 10}{the log of risk ratio of 2-fold increase in baseline HAI titer}
+#'}
+#' @family example_data
+"para1"
+
+#' Example of parameter vector for the baseline HAI titer for the main model
+#'
+#' This is an example of the parameter vector for the baseline HAI titer for the main model used in the \code{serodynamics} function. This data frame specifies the format of the parameter vector for the baseline HAI titer for the main model.
+#' @docType data
+#' @usage data(para2)
+#' @format A vector with 10 elements, where each of them is a model parameter:
+#' \describe{
+#'   \item{element 1-10}{The probability that the HAI titer is equal to 0-9 for children}
+#'   \item{element 11-20}{The probability that the HAI titer is equal to 0-9 for adults}
+#'}
+#' @family example_data
+"para2"

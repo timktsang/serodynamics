@@ -16,5 +16,10 @@ data(flu_activity)
 \description{
 This is an example of the flu activity data used in the \code{serodynamics} function. This data frame specifies the format of the flu activity data.
 }
+\seealso{
+Other example_data: 
+\code{\link{para1}},
+\code{\link{para2}}
+}
 \concept{example_data}
 \keyword{datasets}

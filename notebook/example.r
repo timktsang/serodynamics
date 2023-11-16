@@ -11,7 +11,7 @@ data("inputdata")
 data("flu_activity")
 
 ###### run the MCMC to estimate parameter of the model
-mcmc_result <- sero_dynamics(inputdata,inputILI, 2000,1000,1)
+mcmc_result <- sero_dynamics(inputdata,flu_activity, 20000,10000,1)
 
 ##### obtain the model estimate from fitted MCMC result
 extract_mcmc_result <- output_model_estimate(mcmc_result)

@@ -189,10 +189,10 @@ output_model_estimate <- function(fitted_MCMC,period){
   names(output) <- c("Variable","Point estimate","Lower bound","Upper bound")
   output[,1] <- c("Random error (%)",
                   "Two-fold error (%)",
-                  "Fold-change after infection for children (Boosting)",
-                  "Fold-change after 1 year for children (Waning)",
-                  "Fold-change after infection for adults (Boosting)",
-                  "Fold-change after 1 year for adults (Waning)",
+                  "Fold-increase after infection for children (Boosting)",
+                  "Fold-decrease after 1 year for children (Waning)",
+                  "Fold-increase after 1 year for adults (Boosting)",
+                  "Fold-decrease after 1 year for adults (Waning)",
                   "Infection probability for children",
                   "Infection probability for adults",
                   "Infection probability for older adults",
@@ -210,3 +210,60 @@ output_model_estimate <- function(fitted_MCMC,period){
   
   return(output)
 }
+
+#################################################
+#' Simulation of the dataset of the Bayesian model
+#'
+#' The function to simulate the dataset, for validation or other purpose. 
+#' @param inputdata The data with the same format that for running MCMC, in dataframe format. 
+#' @param inputILI The data for influenza activity used in the inference. The row number should match with the date in the inputdata.
+#' @param para1 The parameter vector for the model parameters, in the following format: 1) the parameter value of the random measurement error, 2) the parameter value of the 2-fold error, 3) the boosting in HAI titer after infection for children (in log2 unit), 4) the waning in HAI titer for children (in log2 unit), 5) the boosting in HAI titer after infection for adults (in log2 unit), 6) the waning in HAI titer for adults (in log2 unit), 7) the scale parameter for children, 8) the scale parameter for adults, 9) the scale parameter for older adults, 10) the log of risk ratio of 2-fold increase in baseline HAI titer 
+#' @param para2 The parameter vector for the parameter fot the HAI titer distribution. The first 10 elements are the probability that the HAI titer is equal to 0-9 for children, and the elements of 11-20 is the probability that the HAI titer is equal to 0-9 for adults.
+#' @return A simulated data based on the input parameter vectors, with the format equal to the input data.
+#' @examples 
+#' a1 <- simulate_data(inputdata, flu_activity, para1, para2)
+#' @export
+simulate_data <- function(inputdata,inputILI,para1,para2){
+
+## first ensure the order
+inputdata <- inputdata[,c("age_group", "start_time", "end_time", "time1", "time2", "time3", "HAI_titer_1", "HAI_titer_2", "HAI_titer3")]
+## add the column for hhID and member
+inputdata <- cbind(0,0,inputdata)
+## each of the time need to -14 to represent the boosting delay
+inputdata[,4:8] <- inputdata[,4:8]-14
+inputdata[is.na(inputdata)] <- -1
+inputdata <- cbind(inputdata,2,0,2)
+inputILI[inputILI<0] <- 1e-11
+
+inputdata <- as.matrix(inputdata)
+inputILI <- as.matrix(inputILI)
+
+#################################################
+
+## try simple format, i.e. gamma with second parameter = 1, beta with second parameter = 1
+## model parameter
+# 1-18  1.random,  2.1-fold, 3-2fold error*6
+# 19-42     1-4 children, adult, older adult boost and waning
+# 43-63     infection para      
+# 64-75    HAI protection
+## first create a function for simulation
+
+int_para <-  c(0.005,rep(0.6,17),rep(c(3.5,0.5),12),rep(c(0.4,0.2,0.2),7),rep(-0.1,12))
+int_para[64:65] <- 0
+move <- rep(1,length(int_para))
+## the original
+move[c(4:18,35:42,64:65,67,69,71,73,75)] <- 0
+## further for 1 season
+move[c(3,19:26,31:51,55:67,69:75)] <- 0
+int_para[which(move==1)] <- para1
+
+# children, adults
+int_para2 <- para2
+
+### run this to create a template to generate the input for MCMC
+t <- sim_data(inputdata,inputILI,int_para,int_para2)
+
+return(data.frame(t[[2]][,2+1:9]))
+}
+
+
