@@ -49,3 +49,11 @@ mcmc_result <- sero_dynamics(inputdata,flu_activity, 2000,1000,1)
 extract_mcmc_result <- output_model_estimate(mcmc_result)
 
 ```
+
+
+## Citation
+
+To cite package **serodynamics** in publications use:
+
+Tsang TK, Perera RAPM, Fang VJ, Wong JY, Shiu EY, So HC, Ip DKM, Malik Peiris JS, Leung GM, Cowling BJ, Cauchemez S. (2022). Reconstructing antibody dynamics to estimate the risk of influenza virus infection. Nat Commun. 2022 Mar 23;13(1):1557.
+

@@ -1,3 +1,4 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # serodynamics
@@ -24,25 +25,36 @@ tools for a comprehensive understanding of your results.
 2.  Install the development version of serodynamics from
     [GitHub](https://github.com/timktsang/serodynamics):
 
-<!-- -->
-
-    devtools::install_github("timktsang/serodynamics")
-    library(serodynamics)
+``` r
+devtools::install_github("timktsang/serodynamics")
+library(serodynamics)
+```
 
 ## Example
 
 This is a basic example of how to load some serological data and fitting
 the model using the MCMC framework.
 
-    library(serodynamics)
+``` r
+library(serodynamics)
 
-    ## Load in a data set and flu activity data
-    data("inputdata")
-    data("flu_activity")
+## Load in a data set and flu activity data
+data("inputdata")
+data("flu_activity")
 
-    ###### run the MCMC to estimate parameter of the model
-    ###### in actual analysis, number of iteration is 200000, burnin is 100000, and thinning is 10
-    mcmc_result <- sero_dynamics(inputdata,flu_activity, 2000,1000,1)
+###### run the MCMC to estimate parameter of the model
+###### in actual analysis, number of iteration is 200000, burnin is 100000, and thinning is 10
+mcmc_result <- sero_dynamics(inputdata,flu_activity, 2000,1000,1)
 
-    ##### obtain the model estimate from fitted MCMC result
-    extract_mcmc_result <- output_model_estimate(mcmc_result)
+##### obtain the model estimate from fitted MCMC result
+extract_mcmc_result <- output_model_estimate(mcmc_result)
+```
+
+## Citation
+
+To cite package **serodynamics** in publications use:
+
+Tsang TK, Perera RAPM, Fang VJ, Wong JY, Shiu EY, So HC, Ip DKM, Malik
+Peiris JS, Leung GM, Cowling BJ, Cauchemez S. (2022). Reconstructing
+antibody dynamics to estimate the risk of influenza virus infection. Nat
+Commun. 2022 Mar 23;13(1):1557.
