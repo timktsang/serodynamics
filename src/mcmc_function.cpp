@@ -105,7 +105,7 @@ NumericMatrix record2(1,1);
 int b1;
 int b2;
 int b3;
-int b4;
+//int b4;
 
 for (b1=data11.nrow()-1;b1>=0;--b1){
 // first impute the basic information here
@@ -276,8 +276,8 @@ void operator()(std::size_t begin, std::size_t end) {
 for (unsigned int b1=begin;b1<end;++b1){
 int b2;
 int b3;
-int b4;
-int b5;
+//int b4;
+//int b5;
 
 if (level1){
 // first level to record the measurment error likelihood
@@ -455,8 +455,8 @@ void operator()(std::size_t begin, std::size_t end) {
 for (unsigned int b1=begin;b1<end;++b1){
 int b2;
 int b3;
-int b4;
-int b5;
+//int b4;
+//int b5;
 
 // here need to design how many update in the step
 // 1-4: baseline AT, inf time, boosting and waning for sh1
@@ -806,7 +806,7 @@ NumericMatrix temprecord(1,1);
 int b1;
 int b2;
 int b3;
-int b4;   
+//int b4;   
 
 // first compute the number to add or delete
 int numberofinfect=0;
@@ -1300,8 +1300,8 @@ int thinning){
 int b0;
 int b1;
 int b2;
-int b3;
-int b4;
+//int b3;
+//int b4;
 int moveindex;
 
 // here data111 is the input that can not be changed
