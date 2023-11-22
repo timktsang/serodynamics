@@ -22,7 +22,7 @@ A data frame with 9 variables, where each row represents an individual:
 data(inputdata)
 }
 \description{
-This is an example of the input data used in the \code{serodynamics} function. This data frame illustrates the format of the input data.
+This is an example of the input data used in the \code{seroreconstruct} function. This data frame illustrates the format of the input data.
 }
 \concept{inputdata}
 \keyword{datasets}

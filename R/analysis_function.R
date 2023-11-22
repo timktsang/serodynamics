@@ -8,9 +8,9 @@
 #' @param thinning The number of thinning in MCMC.
 #' @return A list object stores: 1) posterior samples for the model parameter, 2) posterior samples for the parameter for baseline HAI titer, 3) posterior samples for the infection status for each individual, 4) posterior samples for the infection time for each individual (0 for uninfected individuals), 5) posterior samples for the individual waning, 6) posterior samples for individual boosting, 7) posterior samples for the baseline HAI titer, 8) input data, 9) input influenza activity data.
 #' @examples 
-#' a1 <- serodynamics(inputdata, inputILI, n_iteration = 2000, burnin = 1000, thinning = 1)
+#' a1 <- sero_reconstruct(inputdata, inputILI, n_iteration = 2000, burnin = 1000, thinning = 1)
 #' @export
-sero_dynamics <- function(inputdata,inputILI,n_iteration = 2000,burnin = 1000,thinning = 1){
+sero_reconstruct <- function(inputdata,inputILI,n_iteration = 2000,burnin = 1000,thinning = 1){
 aaaaa1 <- Sys.time()
 
 keep_iteration <- burnin + 1:((n_iteration - burnin)/thinning)*thinning

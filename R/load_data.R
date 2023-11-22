@@ -1,6 +1,6 @@
 #' Example of input data
 #'
-#' This is an example of the input data used in the \code{serodynamics} function. This data frame illustrates the format of the input data.
+#' This is an example of the input data used in the \code{seroreconstruct} function. This data frame illustrates the format of the input data.
 #' @docType data
 #' @usage data(inputdata)
 #' @format A data frame with 9 variables, where each row represents an individual:
@@ -20,7 +20,7 @@
 
 #' Example of flu activity data
 #'
-#' This is an example of the flu activity data used in the \code{serodynamics} function. This data frame specifies the format of the flu activity data.
+#' This is an example of the flu activity data used in the \code{seroreconstruct} function. This data frame specifies the format of the flu activity data.
 #' @docType data
 #' @usage data(flu_activity)
 #' @format A data frame with 1 variable, where each row represents a date, and it should match the date in the input data:
@@ -32,7 +32,7 @@
 
 #' Example of parameter vector for the main model
 #'
-#' This is an example of the parameter vector for the main model used in the \code{serodynamics} function. This data frame specifies the format of the parameter vector for the main model.
+#' This is an example of the parameter vector for the main model used in the \code{seroreconstruct} function. This data frame specifies the format of the parameter vector for the main model.
 #' @docType data
 #' @usage data(para1)
 #' @format A vector with 10 elements, where each of them is a model parameter:
@@ -53,7 +53,7 @@
 
 #' Example of parameter vector for the baseline HAI titer for the main model
 #'
-#' This is an example of the parameter vector for the baseline HAI titer for the main model used in the \code{serodynamics} function. This data frame specifies the format of the parameter vector for the baseline HAI titer for the main model.
+#' This is an example of the parameter vector for the baseline HAI titer for the main model used in the \code{seroreconstruct} function. This data frame specifies the format of the parameter vector for the baseline HAI titer for the main model.
 #' @docType data
 #' @usage data(para2)
 #' @format A vector with 10 elements, where each of them is a model parameter:

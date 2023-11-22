@@ -23,7 +23,7 @@ A vector with 10 elements, where each of them is a model parameter:
 data(para1)
 }
 \description{
-This is an example of the parameter vector for the main model used in the \code{serodynamics} function. This data frame specifies the format of the parameter vector for the main model.
+This is an example of the parameter vector for the main model used in the \code{seroreconstruct} function. This data frame specifies the format of the parameter vector for the main model.
 }
 \seealso{
 Other example_data: 

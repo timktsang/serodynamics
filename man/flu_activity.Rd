@@ -14,7 +14,7 @@ A data frame with 1 variable, where each row represents a date, and it should ma
 data(flu_activity)
 }
 \description{
-This is an example of the flu activity data used in the \code{serodynamics} function. This data frame specifies the format of the flu activity data.
+This is an example of the flu activity data used in the \code{seroreconstruct} function. This data frame specifies the format of the flu activity data.
 }
 \seealso{
 Other example_data: 

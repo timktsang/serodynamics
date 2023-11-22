@@ -13,7 +13,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // prior_loglik
 double prior_loglik(NumericVector para);
-RcppExport SEXP _serodynamics_prior_loglik(SEXP paraSEXP) {
+RcppExport SEXP _seroreconstruct_prior_loglik(SEXP paraSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -24,7 +24,7 @@ END_RCPP
 }
 // sim_data
 List sim_data(NumericMatrix data1, NumericMatrix ILI, NumericVector para, NumericVector para2);
-RcppExport SEXP _serodynamics_sim_data(SEXP data1SEXP, SEXP ILISEXP, SEXP paraSEXP, SEXP para2SEXP) {
+RcppExport SEXP _seroreconstruct_sim_data(SEXP data1SEXP, SEXP ILISEXP, SEXP paraSEXP, SEXP para2SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -38,7 +38,7 @@ END_RCPP
 }
 // loglik
 List loglik(NumericMatrix data11, NumericMatrix data111, NumericMatrix data21, NumericMatrix ILI, NumericVector para, NumericVector para2, int level1, int level2, int level3, int season, NumericMatrix blankmatrix);
-RcppExport SEXP _serodynamics_loglik(SEXP data11SEXP, SEXP data111SEXP, SEXP data21SEXP, SEXP ILISEXP, SEXP paraSEXP, SEXP para2SEXP, SEXP level1SEXP, SEXP level2SEXP, SEXP level3SEXP, SEXP seasonSEXP, SEXP blankmatrixSEXP) {
+RcppExport SEXP _seroreconstruct_loglik(SEXP data11SEXP, SEXP data111SEXP, SEXP data21SEXP, SEXP ILISEXP, SEXP paraSEXP, SEXP para2SEXP, SEXP level1SEXP, SEXP level2SEXP, SEXP level3SEXP, SEXP seasonSEXP, SEXP blankmatrixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -59,7 +59,7 @@ END_RCPP
 }
 // all_update
 List all_update(NumericMatrix data11, NumericMatrix data111, NumericMatrix data21, NumericMatrix ILI, NumericVector para, NumericVector para2, NumericMatrix loglik1, NumericMatrix loglik2, NumericMatrix loglik3);
-RcppExport SEXP _serodynamics_all_update(SEXP data11SEXP, SEXP data111SEXP, SEXP data21SEXP, SEXP ILISEXP, SEXP paraSEXP, SEXP para2SEXP, SEXP loglik1SEXP, SEXP loglik2SEXP, SEXP loglik3SEXP) {
+RcppExport SEXP _seroreconstruct_all_update(SEXP data11SEXP, SEXP data111SEXP, SEXP data21SEXP, SEXP ILISEXP, SEXP paraSEXP, SEXP para2SEXP, SEXP loglik1SEXP, SEXP loglik2SEXP, SEXP loglik3SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -78,7 +78,7 @@ END_RCPP
 }
 // add_remove_infection
 List add_remove_infection(NumericMatrix data11, NumericMatrix data111, NumericMatrix data21, NumericMatrix ILI, NumericVector para, NumericVector para2, NumericMatrix loglik1, NumericMatrix loglik2, NumericMatrix loglik3);
-RcppExport SEXP _serodynamics_add_remove_infection(SEXP data11SEXP, SEXP data111SEXP, SEXP data21SEXP, SEXP ILISEXP, SEXP paraSEXP, SEXP para2SEXP, SEXP loglik1SEXP, SEXP loglik2SEXP, SEXP loglik3SEXP) {
+RcppExport SEXP _seroreconstruct_add_remove_infection(SEXP data11SEXP, SEXP data111SEXP, SEXP data21SEXP, SEXP ILISEXP, SEXP paraSEXP, SEXP para2SEXP, SEXP loglik1SEXP, SEXP loglik2SEXP, SEXP loglik3SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -97,7 +97,7 @@ END_RCPP
 }
 // mcmc
 List mcmc(NumericMatrix input1, NumericMatrix input2, NumericMatrix input3, NumericMatrix ILI, int mcmc_n, NumericVector int_para, NumericVector int_para2, NumericVector int_para3, NumericVector paraseason, NumericVector move, NumericVector sigma, NumericVector sigma3, int burnin, int thinning);
-RcppExport SEXP _serodynamics_mcmc(SEXP input1SEXP, SEXP input2SEXP, SEXP input3SEXP, SEXP ILISEXP, SEXP mcmc_nSEXP, SEXP int_paraSEXP, SEXP int_para2SEXP, SEXP int_para3SEXP, SEXP paraseasonSEXP, SEXP moveSEXP, SEXP sigmaSEXP, SEXP sigma3SEXP, SEXP burninSEXP, SEXP thinningSEXP) {
+RcppExport SEXP _seroreconstruct_mcmc(SEXP input1SEXP, SEXP input2SEXP, SEXP input3SEXP, SEXP ILISEXP, SEXP mcmc_nSEXP, SEXP int_paraSEXP, SEXP int_para2SEXP, SEXP int_para3SEXP, SEXP paraseasonSEXP, SEXP moveSEXP, SEXP sigmaSEXP, SEXP sigma3SEXP, SEXP burninSEXP, SEXP thinningSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -121,16 +121,16 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_serodynamics_prior_loglik", (DL_FUNC) &_serodynamics_prior_loglik, 1},
-    {"_serodynamics_sim_data", (DL_FUNC) &_serodynamics_sim_data, 4},
-    {"_serodynamics_loglik", (DL_FUNC) &_serodynamics_loglik, 11},
-    {"_serodynamics_all_update", (DL_FUNC) &_serodynamics_all_update, 9},
-    {"_serodynamics_add_remove_infection", (DL_FUNC) &_serodynamics_add_remove_infection, 9},
-    {"_serodynamics_mcmc", (DL_FUNC) &_serodynamics_mcmc, 14},
+    {"_seroreconstruct_prior_loglik", (DL_FUNC) &_seroreconstruct_prior_loglik, 1},
+    {"_seroreconstruct_sim_data", (DL_FUNC) &_seroreconstruct_sim_data, 4},
+    {"_seroreconstruct_loglik", (DL_FUNC) &_seroreconstruct_loglik, 11},
+    {"_seroreconstruct_all_update", (DL_FUNC) &_seroreconstruct_all_update, 9},
+    {"_seroreconstruct_add_remove_infection", (DL_FUNC) &_seroreconstruct_add_remove_infection, 9},
+    {"_seroreconstruct_mcmc", (DL_FUNC) &_seroreconstruct_mcmc, 14},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_serodynamics(DllInfo *dll) {
+RcppExport void R_init_seroreconstruct(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

@@ -1,4 +1,4 @@
-Package: serodynamics
+Package: seroreconstruct
 Type: Package
 Title: Reconstructing antibody dynamics to estimate the risk of influenza virus infection
 Version: 1.0
@@ -12,8 +12,8 @@ Maintainer: Tim Tsang <timkltsang@gmail.com>
 Description: A Bayesian model to jointly estimate infection probability in seasons, boosting and waning in antibody after infection, and baseline distribution of HAI titer.
 License: GPL (>= 2)
 LazyData: TRUE
-URL: https://github.com/timktsang/serodynamics
-BugReports: https://github.com/timktsang/serodynamics/issues
+URL: https://github.com/timktsang/seroreconstruct
+BugReports: https://github.com/timktsang/seroreconstruct/issues
 Depends: R (>= 3.5.0)
 Imports: Rcpp (>= 1.0.9)
 LinkingTo: 

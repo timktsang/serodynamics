@@ -1,16 +1,16 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# serodynamics
+# seroreconstruct
 
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-`serodynamics` is a Bayesian modeling framework to infer influenza virus
-infection status, antibody dynamics, and individual infection risks from
-serological data, by accounting for measurement error. This could
-identifiy influenza infections by relaxing 4-fold rise rule, and
+`seroreconstruct` is a Bayesian modeling framework to infer influenza
+virus infection status, antibody dynamics, and individual infection
+risks from serological data, by accounting for measurement error. This
+could identifiy influenza infections by relaxing 4-fold rise rule, and
 quantifies the contributions of age and pre-epidemic
 hemagglutination-inhibiting (HAI) titers to infection risk.
 
@@ -22,12 +22,12 @@ tools for a comprehensive understanding of your results.
 
 1.  Install \[R\]\[r-project\]
 
-2.  Install the development version of serodynamics from
-    [GitHub](https://github.com/timktsang/serodynamics):
+2.  Install the development version of seroreconstruct from
+    [GitHub](https://github.com/timktsang/seroreconstruct):
 
 ``` r
-devtools::install_github("timktsang/serodynamics")
-library(serodynamics)
+devtools::install_github("timktsang/seroreconstruct")
+library(seroreconstruct)
 ```
 
 ## Example
@@ -36,7 +36,7 @@ This is a basic example of how to load some serological data and fitting
 the model using the MCMC framework.
 
 ``` r
-library(serodynamics)
+library(seroreconstruct)
 
 ## Load in a data set and flu activity data
 data("inputdata")
@@ -44,7 +44,7 @@ data("flu_activity")
 
 ###### run the MCMC to estimate parameter of the model
 ###### in actual analysis, number of iteration is 200000, burnin is 100000, and thinning is 10
-mcmc_result <- sero_dynamics(inputdata,flu_activity, 2000,1000,1)
+mcmc_result <- sero_reconstruct(inputdata,flu_activity, 2000,1000,1)
 
 ##### obtain the model estimate from fitted MCMC result
 extract_mcmc_result <- output_model_estimate(mcmc_result)
@@ -52,7 +52,7 @@ extract_mcmc_result <- output_model_estimate(mcmc_result)
 
 ## Citation
 
-To cite package **serodynamics** in publications use:
+To cite package **seroreconstruct** in publications use:
 
 Tsang TK, Perera RAPM, Fang VJ, Wong JY, Shiu EY, So HC, Ip DKM, Malik
 Peiris JS, Leung GM, Cowling BJ, Cauchemez S. (2022). Reconstructing

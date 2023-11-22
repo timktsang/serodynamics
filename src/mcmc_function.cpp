@@ -1468,16 +1468,16 @@ sigma(b1)=sd(temp1);
 if (acceptrate(b1)<0.1){
 sigma(b1)*=0.5;
 }	
-if ((acceptrate(b1)<0.15)&(acceptrate(b1)>0.1)){
+if ((acceptrate(b1)<0.15)&&(acceptrate(b1)>0.1)){
 sigma(b1)*=0.8;
 }
-if ((acceptrate(b1)<0.2)&(acceptrate(b1)>0.15)){
+if ((acceptrate(b1)<0.2)&&(acceptrate(b1)>0.15)){
 sigma(b1)*=0.95;
 }
-if ((acceptrate(b1)<0.4)&(acceptrate(b1)>0.3)){
+if ((acceptrate(b1)<0.4)&&(acceptrate(b1)>0.3)){
 sigma(b1)*=1.05;
 }
-if ((acceptrate(b1)<0.9)&(acceptrate(b1)>0.4)){
+if ((acceptrate(b1)<0.9)&&(acceptrate(b1)>0.4)){
 sigma(b1)*=1.2;
 }
 if (acceptrate(b1)>0.9){
@@ -1497,16 +1497,16 @@ sigma3(b1)=sd(temp1);
 if (acceptrate3(b1)<0.1){
 sigma3(b1)*=0.5;
 }	
-if ((acceptrate3(b1)<0.15)&(acceptrate3(b1)>0.1)){
+if ((acceptrate3(b1)<0.15)&&(acceptrate3(b1)>0.1)){
 sigma3(b1)*=0.8;
 }
-if ((acceptrate3(b1)<0.2)&(acceptrate3(b1)>0.15)){
+if ((acceptrate3(b1)<0.2)&&(acceptrate3(b1)>0.15)){
 sigma3(b1)*=0.95;
 }
-if ((acceptrate3(b1)<0.4)&(acceptrate3(b1)>0.3)){
+if ((acceptrate3(b1)<0.4)&&(acceptrate3(b1)>0.3)){
 sigma3(b1)*=1.05;
 }
-if ((acceptrate3(b1)<0.9)&(acceptrate3(b1)>0.4)){
+if ((acceptrate3(b1)<0.9)&&(acceptrate3(b1)>0.4)){
 sigma3(b1)*=1.2;
 }
 if (acceptrate3(b1)>0.9){
