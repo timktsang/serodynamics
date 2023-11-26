@@ -50,6 +50,8 @@ mcmc_result <- sero_reconstruct(inputdata,flu_activity, 2000,1000,1)
 extract_mcmc_result <- output_model_estimate(mcmc_result)
 ```
 
+![The output of the MCMC results.](man/figures/sero_result.png)
+
 ## Citation
 
 To cite package **seroreconstruct** in publications use:
